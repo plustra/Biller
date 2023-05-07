@@ -167,12 +167,19 @@ function saveInputValue(input) {
  * @param {HTMLButtonElement} button
  */
 function changePDF(button) {
-    button.textContent = button.textContent === 'Bill' ? 'Order' : 'Bill';
     document.querySelectorAll('[hide]').forEach((element) => {
         const hide = element.getAttribute('hide') === 'true' ? false : true;
         element.style.display = hide ? 'none' : '';
         element.setAttribute('hide', hide);
     });
+
+    if (localStorage.getItem('type') == 'bill') {
+        button.textContent = 'Order';
+        localStorage.setItem('type', 'order');
+    } else {
+        button.textContent = 'Bill';
+        localStorage.setItem('type', 'bill');
+    }
 }
 
 /**
@@ -181,7 +188,7 @@ function changePDF(button) {
  */
 function downloadPDF() {
     const billNumber = document.getElementById('billNumber');
-    const type = document.getElementById('changePDF').textContent === 'Bill' ? 'Factura' : 'Pedido';
+    const type = localStorage.getItem('type') == 'bill' ? 'Factura' : 'Pedido';
     const filename = `${type} ${billNumber.textContent}.pdf`;
     html2pdf().from(document.getElementById('pdf')).save(filename);
 }
