@@ -19,10 +19,14 @@
             window.addEventListener('load', () => {
                 localStorage.setItem('type', 'bill');
                 loadStorage();
-                document.querySelectorAll('[hide]').forEach((element) => {
-                    if (element.getAttribute('hide') === 'true') {
-                        element.style.display = 'none';
-                    }
+
+                const billNumber = document.getElementById('billNumber');
+                const type = localStorage.getItem('type');
+                const typename = type.charAt(0).toUpperCase() + type.slice(1);
+                billNumber.textContent = `${typename} No. ${getStorage('billNumber')}`;
+
+                document.querySelectorAll('[hide="true"]').forEach((element) => {
+                    element.style.display = 'none';
                 });
             });
         </script>
@@ -74,7 +78,7 @@
                     <div id="items" class="items">
                         <div class="item">
                             <div class="item-col-sm" style="font-weight: 600">No</div>
-                            <div class="item-col-lg" style="font-weight: 600">Description</div>
+                            <div class="item-col-lg" style="font-weight: 600">Article</div>
                             <div class="item-col-md" style="font-weight: 600" hide="false">Price</div>
                             <div class="item-col-md" style="font-weight: 600">Units</div>
                             <div class="item-col-md" style="font-weight: 600" hide="false">Total</div>
