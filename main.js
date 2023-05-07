@@ -173,14 +173,15 @@ function changePDF(button) {
         element.setAttribute('hide', hide);
     });
 
-    const billNumber = document.getElementById('billNumber');
-    const currentType = localStorage.getItem('type');
-    const newType = currentType === 'bill' ? 'order' : 'bill';
-    const buttonText = currentType === 'bill' ? 'Order' : 'Bill';
-
-    localStorage.setItem('type', newType);
-    billNumber.textContent = `${newType.charAt(0).toUpperCase() + newType.slice(1)} No. ${getStorage('billNumber')}`;
-    button.textContent = buttonText;
+    if (localStorage.getItem('type') === 'bill') {
+        localStorage.setItem('type', 'order');
+        document.getElementById('billNumber').textContent = `Order No. ${getStorage('billNumber')}`;
+        button.textContent = 'Order';
+    } else {
+        localStorage.setItem('type', 'bill');
+        document.getElementById('billNumber').textContent = `Invoice No. ${getStorage('billNumber')}`;
+        button.textContent = 'Invoice';
+    }
 }
 
 /**
