@@ -19,7 +19,7 @@
             window.addEventListener('load', () => {
                 loadStorage();
                 localStorage.setItem('type', 'bill');
-                document.getElementById('billNumber').textContent = `Invoice No. ${getStorage('billNumber')}`;
+                document.getElementById('billNumber').textContent = `Factura No. ${getStorage('billNumber')}`;
 
                 document.querySelectorAll('[hide="true"]').forEach((element) => {
                     element.style.display = 'none';
