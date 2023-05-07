@@ -179,7 +179,7 @@ function changePDF(button) {
         button.textContent = 'Order';
     } else {
         localStorage.setItem('type', 'bill');
-        document.getElementById('billNumber').textContent = `Factura No. ${getStorage('billNumber')}`;
+        document.getElementById('billNumber').textContent = `Invoice No. ${getStorage('billNumber')}`;
         button.textContent = 'Invoice';
     }
 }
