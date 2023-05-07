@@ -10,6 +10,7 @@ function createItem(number, description, price, units) {
     const itemElement = document.createElement('div');
     itemElement.id = `item:${number}`;
     itemElement.className = 'item';
+    itemElement.setAttribute('translate', 'no');
 
     const numberElement = document.createElement('div');
     numberElement.textContent = number.toString();

@@ -27,9 +27,9 @@
             });
         </script>
     </head>
-    <body>
+    <body translate="no">
         <main class="bill">
-            <div class="bill-buttons">
+            <div class="bill-buttons" translate="yes">
                 <button class="form-button blue" onclick="downloadPDF()">Download</button>
                 <button class="form-button blue" style="width: 300px" onclick="changePDF(this)">Invoice</button>
             </div>
@@ -41,14 +41,14 @@
                             <p id="sellerName" class="bill-bigtitle" style="min-width: fit-content"></p>
                             <p id="sellerRut" class="bill-subtitle"></p>
                         </div>
-                        <div class="bill-section" style="text-align: right; margin: auto 0">
+                        <div class="bill-section" style="text-align: right; margin: auto 0" translate="yes">
                             <p id="billNumber" class="bill-title" style="margin-bottom: 0"></p>
                             <p id="billDate" class="bill-subtitle"></p>
                         </div>
                     </div>
                     <div class="bill-row">
                         <div class="bill-section">
-                            <p class="bill-title" class="bill-text">Sender</p>
+                            <p class="bill-title" class="bill-text" translate="yes">Sender</p>
                             <p id="senderName" class="bill-text"></p>
                             <p id="senderEmail" class="bill-text"></p>
                             <p id="senderPhone" class="bill-text"></p>
@@ -56,7 +56,7 @@
                             <p id="senderAddress" class="bill-text"></p>
                         </div>
                         <div class="bill-section">
-                            <p class="bill-title" class="bill-text">Receiver</p>
+                            <p class="bill-title" class="bill-text" translate="yes">Receiver</p>
                             <p id="receiverName" class="bill-text"></p>
                             <p id="receiverEmail" class="bill-text"></p>
                             <p id="receiverPhone" class="bill-text"></p>
@@ -66,7 +66,7 @@
                     </div>
                     <div class="bill-row" hide="true">
                         <div class="bill-section">
-                            <p class="bill-title">Message</p>
+                            <p class="bill-title" translate="yes">Message</p>
                             <p id="productMessage" class="bill-message" style="white-space: pre-wrap"></p>
                         </div>
                         <img id="productImage" class="product-image" />
@@ -82,12 +82,12 @@
                     </div>
                     <div class="bill-row" hide="false">
                         <div class="bill-section">
-                            <p class="bill-title">Information</p>
+                            <p class="bill-title" translate="yes">Information</p>
                             <p id="sellerBank" class="bill-text"></p>
                             <p id="sellerEmail" class="bill-text"></p>
                             <p id="sellerPhone" class="bill-text"></p>
                         </div>
-                        <div class="bill-section" style="text-align: right">
+                        <div class="bill-section" style="text-align: right" translate="yes">
                             <p class="bill-subtitle">Total:</p>
                             <p id="total" class="bill-bigtitle">$0</p>
                         </div>
